@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- i -->
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <title>Niveau 1</title>
+    <!-- u -->
+    <script>
+        function checkPassword() {
+            var password = prompt("Entrez le mot de passe pour passer au niveau suivant :");
+            
+// a
+            var correctPassword = String.fromCharCode(110, 105, 118, 101, 97, 117, 49);
+
+            if (password === correctPassword) {
+                alert("Bravo ! Mot de passe correct.");
+                document.getElementById("message").innerText = "Félicitations ! Tu as réussi le niveau 1.";
+            } else {
+                // 1
+                alert("Mauvais mot de passe !");
+            }
+        }
+    </script>
+    <!-- n -->
+</head>
+<body onload="checkPassword()">
+    <h1>Niveau 1</h1>
+    <!-- v -->
+    <p>Le mot de passe est caché quelque part sur cette page...</p>
+    <p class="fake-piste">Clique ici pour un indice !</p> 
+    <div class="password-hint"></div>
+    <button onclick="checkPassword()">Vérifier le mot de passe</button>
+    <p class="spinning-text">Ne regarde pas ici !</p> 
+    <p id="message"></p> 
+</body>
+</html>
+<!-- e -->

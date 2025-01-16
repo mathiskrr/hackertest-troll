@@ -1,0 +1,90 @@
+/* Design chiant et frustrant */
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Police horrible */
+    background-color: #f0f0f0; /* Fond gris fade */
+    color: #333; /* Texte sombre */
+    text-align: center;
+    padding: 50px;
+    margin: 0;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #ff0000; /* Titre rouge vif */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Ombre bizarre */
+    animation: shake 0.5s infinite; /* Titre qui bouge */
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+p {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    opacity: 0.8; /* Texte semi-transparent */
+}
+
+button {
+    background-color: #00ff00; /* Bouton vert fluo */
+    color: #000; /* Texte noir */
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 50px; /* Bouton rond */
+    animation: pulse 1s infinite; /* Bouton qui pulse */
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+button:hover {
+    background-color: #ff00ff;
+}
+
+
+.password-hint::before {
+    content: "Mot de passe : niveau2"; 
+    display: none; 
+}
+
+.fake-piste {
+    color: #0000ff;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.fake-piste:hover {
+    color: #ff0000;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.spinning-text {
+    display: inline-block;
+    animation: spin 2s linear infinite;
+}
+
+body {
+    animation: changeBackground 10s infinite;
+}
+
+@keyframes changeBackground {
+    0% { background-color: #f0f0f0; }
+    25% { background-color: #ffcccb; }
+    50% { background-color: #add8e6; }
+    75% { background-color: #f0e68c; }
+    100% { background-color: #f0f0f0; }
+}

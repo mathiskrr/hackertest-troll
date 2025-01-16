@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <title>Niveau 3</title>
+    <style>
+        .hidden-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            opacity: 0;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            background-color: transparent;
+            border: none;
+        }
+        .fake-image {
+            width: 300px;
+            height: auto;
+            margin: 20px auto;
+            display: block;
+        }
+        .spinning-text {
+            animation: spin 2s linear infinite;
+            text-align: center;
+            margin-top: 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    <script>
+        function downloadPSD() {
+            var link = document.createElement('a');
+            link.href = '../images/lol.psd';
+            link.download = 'lol.psd';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function checkPassword() {
+            var password = prompt("Entrez le mot de passe pour valider le niveau :");
+            var correctPassword = String.fromCharCode(100, 111, 102, 117, 115);
+            if (password === correctPassword) {
+                alert("Bravo ! Mot de passe correct.");
+                document.getElementById("message").innerText = "Félicitations ! Tu as réussi le niveau 3.";
+            } else {
+                alert("Mauvais mot de passe !");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Niveau 3</h1>
+    <p>Le mot de passe est caché quelque part sur cette page. Trouve-le !</p>
+    <img src="../images/rat.png" alt="Fausse image" class="fake-image">
+    <button class="hidden-button" onclick="downloadPSD()"></button>
+    <p class="fake-piste">Clique ici pour un indice !</p>
+    <p class="spinning-text">Ne regarde pas ici !</p>
+    <button onclick="checkPassword()">Valider le mot de passe</button>
+    <p id="message"></p>
+</body>
+</html>

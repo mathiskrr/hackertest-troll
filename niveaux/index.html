@@ -11,12 +11,12 @@
         function checkPassword() {
             var password = prompt("Entrez le mot de passe pour passer au niveau suivant :");
             
-// a
-            var correctPassword = String.fromCharCode(110, 105, 118, 101, 97, 117, 49);
 
+            var correctPassword = String.fromCharCode(110, 105, 118, 101, 97, 117, 49);
+            // a
             if (password === correctPassword) {
-                alert("Bravo ! Mot de passe correct.");
-                document.getElementById("message").innerText = "Félicitations ! Tu as réussi le niveau 1.";
+                alert("Bravo ! Mot de passe correct. Redirection vers le niveau 2...");
+                window.location.href = "niveau2.html";
             } else {
                 // 1
                 alert("Mauvais mot de passe !");

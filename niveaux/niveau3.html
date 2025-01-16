@@ -45,17 +45,19 @@
 
         function checkPassword() {
             var password = prompt("Entrez le mot de passe pour valider le niveau :");
+            
             var correctPassword = String.fromCharCode(100, 111, 102, 117, 115);
+
             if (password === correctPassword) {
-                alert("Bravo ! Mot de passe correct.");
-                document.getElementById("message").innerText = "Félicitations ! Tu as réussi le niveau 3.";
+                alert("Bravo ! Mot de passe correct. Redirection vers le niveau 4...");
+                window.location.href = "niveau4.html";
             } else {
                 alert("Mauvais mot de passe !");
             }
         }
     </script>
 </head>
-<body>
+<body onload="checkPassword()">
     <h1>Niveau 3</h1>
     <p>Le mot de passe est caché quelque part sur cette page. Trouve-le !</p>
     <img src="../images/rat.png" alt="Fausse image" class="fake-image">

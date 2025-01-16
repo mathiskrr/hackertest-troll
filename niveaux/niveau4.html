@@ -54,21 +54,20 @@
         function checkPassword() {
             var password = prompt("Entrez le mot de passe pour valider le niveau :");
             
-            
             var correctPassword = String.fromCharCode(
                 97, 110, 116, 105, 99, 111, 110, 115, 116, 105, 116, 117, 116, 105, 111, 110, 110, 101, 108, 108, 101, 109, 101, 110, 116
             ); 
 
             if (password === correctPassword) {
-                alert("Bravo ! Mot de passe correct.");
-                document.getElementById("message").innerText = "Félicitations ! Tu as réussi le niveau 4.";
+                alert("Bravo ! Mot de passe correct. Redirection vers le niveau 5...");
+                window.location.href = "niveau5.html";
             } else {
                 alert("Mauvais mot de passe !");
             }
         }
     </script>
 </head>
-<body>
+<body onload="checkPassword()">
     <h1>Niveau 4</h1>
     <p>Le mot de passe est caché quelque part sur cette page. Trouve-le !</p>
     <p class="spinning-text">Ne regarde pas ici ! Le mot de passe est : anticonstitutionnellement</p> 

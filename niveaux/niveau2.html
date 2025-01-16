@@ -9,21 +9,20 @@
         function checkPassword() {
             var password = prompt("Entrez le mot de passe pour passer au niveau suivant :");
             
-
-            var correctPassword = String.fromCharCode(104, 97, 99, 107, 101, 114); 
+            var correctPassword = String.fromCharCode(104, 97, 99, 107, 101, 114);
 
             if (password === correctPassword) {
-                alert("Bravo ! Mot de passe correct.");
-                document.getElementById("message").innerText = "Félicitations ! Tu as réussi le niveau 2.";
+                alert("Bravo ! Mot de passe correct. Redirection vers le niveau 3...");
+                window.location.href = "niveau3.html";
             } else {
                 alert("Mauvais mot de passe !");
             }
         }
     </script>
 </head>
-<body>
+<body onload="checkPassword()">
     <h1>Niveau 2</h1>
-    <p>Le mot de passe c'est cette image. Trouve-le !</p>
+    <p>Le mot de passe est caché dans cette image. Trouve-le !</p>
     <img src="../images/hacker.jpg" alt="Indice" style="width: 300px; height: auto;">
     <div class="password-hint"></div>
     <button onclick="checkPassword()">Vérifier le mot de passe</button>

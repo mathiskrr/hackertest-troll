@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <title>Niveau 5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .hidden-password {
+            display: none; /* Morceau 1 caché dans le HTML */
+        }
+        .fake-piste {
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .spinning-text {
+            animation: spin 0.1s linear infinite; /* Rotation très rapide */
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .hidden-button {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            opacity: 0; /* Bouton invisible */
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            background-color: transparent;
+            border: none;
+        }
+        .stopped {
+            animation: none; /* Arrête la rotation */
+        }
+        .fake-image {
+            width: 300px;
+            height: auto;
+            margin: 20px auto;
+            display: block;
+        }
+        /* Morceau 2 caché dans le CSS */
+        .hidden-css::after {
+            content: "gouverne";
+            display: none;
+        }
+    </style>
+    <script>
+        // Morceau 3 caché dans le JavaScript
+        const morceau3 = "menta";
+
+        // Mot de passe complet masqué avec String.fromCharCode
+        const correctPassword = String.fromCharCode(
+            105, 110, 116, 101, 114, // inter
+            103, 111, 117, 118, 101, 114, 110, 101, // gouverne
+            109, 101, 110, 116, 97, // menta
+            108, 105, 115, 97, // lisa
+            116, 105, 111, 110, 115 // tions
+        ); // "intergouvernementalisations"
+
+        function stopRotation() {
+            var spinningText = document.querySelector('.spinning-text');
+            spinningText.classList.add('stopped'); // Arrête la rotation
+            alert("La rotation est arrêtée. Lis le mot de passe dans le texte !");
+        }
+
+        function fakeIndice() {
+            alert("T'aura rien mon gars.");
+        }
+
+        function checkPassword() {
+            var password = prompt("Entrez le mot de passe pour valider le niveau :");
+            
+            if (password === correctPassword) {
+                alert("Bravo ! Mot de passe correct.");
+                document.getElementById("message").innerText = "Félicitations ! Tu as réussi le niveau 5.";
+            } else {
+                alert("Mauvais mot de passe !");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Niveau 5</h1>
+    <p>Le mot de passe est caché en plusieurs morceaux sur cette page. Trouve-les tous !</p>
+
+    <div class="hidden-password">inter</div>
+
+    <div class="hidden-css"></div>
+
+    <!-- Morceau 3 caché dans le JavaScript (const morceau3 = "menta") -->
+    <p>Un morceau est caché dans le JavaScript. Inspecte la console !</p>
+
+    <!-- Morceau 4 caché dans une image (via métadonnées) -->
+    <img src="../images/lisa.png" alt="Fausse image" class="fake-image" >
+
+    <!-- Morceau 5 caché dans un attribut HTML -->
+    <p data-morceau="tions">Passe ta souris ici pour un indice.</p>
+
+    <button class="hidden-button" onclick="stopRotation()"></button> <!-- Bouton caché -->
+    <p class="fake-piste" onclick="fakeIndice()">Clique ici pour un indice !</p> <!-- Fausse piste -->
+    <button onclick="checkPassword()">Valider le mot de passe</button> <!-- Bouton de validation -->
+    <p id="message"></p> <!-- Message de succès -->
+</body>
+</html>
